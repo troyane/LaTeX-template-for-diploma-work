@@ -1,0 +1,62 @@
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+%       Шаблон розроблений Герасимчуком Назаром (nazar.gerasymchuk@gmail.com)
+%   доступний за адресою: https://github.com/troyane/LaTeX-template-for-diploma-work
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%  Файл додатків appendix.tex
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+
+\chapter*{\textsc{Додатки}}
+\addcontentsline{toc}{chapter}{\textsc{Додатки}}
+
+\subsection*{Частини програмного коду жаби-кіборга}
+Вихідний код модуля myTypes.h, в якому описано основну структуру -- точку в тривимірному просторі glPoint3d.
+\begin{verbatim}
+#include <math.h>
+#include <QtOpenGL>
+// опис "нуля" термінами OpenGL
+#define GL_0 (GLfloat(0.0))
+
+const float EPS = 1.0E-5;		// похибкa 
+const float RTOD = 180/M_PI;	// коеф. радіани->градуси
+
+using namespace std;
+
+//ф-ія квадрату
+inline GLfloat sqr(GLfloat x){ 
+   return (GLfloat) (x*x); 
+}  
+
+// ф-ія перевірки x на близкість до 0.0
+inline bool isZero(GLfloat x){ 
+   return fabsf((float)x)<EPS ? true : false; 
+}
+
+class glPoint3d{
+// клас точки в 3d з текстурними координатами
+public:
+   GLfloat x, y, z;
+   GLfloat tx, ty;
+
+   glPoint3d(GLfloat nx, GLfloat ny, GLfloat nz, GLfloat ntx, 
+   				GLfloat nty){
+    x=nx; y=ny; z=nz; tx=ntx; ty=nty;
+};  
+// занулення
+void makeZeros(){x=GL_0; y=GL_0; z=GL_0; tx=GL_0; ty=GL_0;}
+// нормування
+void normalize(){
+   GLfloat l = 1.0f/sqrt(sqr(x) + sqr(y) + sqr(z));
+   if(!isZero(l)){
+    x *= l;
+    y *= l;
+    z *= l;
+   }else{ x=GL_0; y=GL_0; z=GL_0; }
+};
+// пошук відстані до other
+GLfloat to(glPoint3d *other){ 
+   return (GLfloat) sqrt(sqr(x-other->x) + 
+            sqr(y-other->y)+sqr(z-other->z)); 
+  };
+};
+\end{verbatim}

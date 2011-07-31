@@ -1,0 +1,80 @@
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+%       Шаблон розроблений Герасимчуком Назаром (nazar.gerasymchuk@gmail.com)
+%   доступний за адресою: https://github.com/troyane/LaTeX-template-for-diploma-work
+%- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%  Головний файл all.tex
+%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+\documentclass[a4paper,14pt]{extreport} % Розмір паперу А4, шрифт 14 пунктів
+\usepackage[T2A]{fontenc}
+\usepackage[english,ukrainian]{babel}
+\usepackage{ucs}
+\usepackage[utf8]{inputenc} % включємо кодування utf8 в *NIX (cp1251 в Windows)
+\usepackage{amssymb,amsfonts,amsmath,mathtext,cite,enumerate,float} % підключаємо пакети розширень
+\usepackage{listings} % для вихідних кодів
+\usepackage{alltt}  
+\usepackage{algorithmic}
+\usepackage{indentfirst} % для абзаців
+\usepackage[pdftex]{graphicx}
+
+\renewcommand{\rmdefault}{cmr}
+\renewcommand{\sfdefault}{ftx}
+\renewcommand{\ttdefault}{cmtt}
+
+\makeatletter
+
+%\bibliographystyle{unsrt}
+\bibliographystyle{gost780s} % встановлюємо тип бібліографії
+%\def\BibUrl#1{#1}
+
+\renewcommand{\@biblabel}[1]{#1.} % змінюємо формат нумерації бібліографії на "цифра."
+
+\makeatother
+
+\usepackage{geometry} % Меняєм поля сторінки
+\geometry{left=3cm}
+\geometry{right=1cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+
+\usepackage{setspace} % інтерліньяж
+\onehalfspacing
+
+%ОТСАННІ ПРАВКИ
+\makeatletter
+
+\renewcommand*\@makechapterhead[1]{
+  {\parindent \z@ \center \normalfont \bfseries
+    \LARGE \textsc
+    \@chapapp{} \thechapter. #1
+    \nopagebreak
+    \vspace{40pt}
+  }}
+\makeatother
+
+% Змінюємо скрізь перелічення на наступні "цифра.цифра.":
+\renewcommand{\theenumi}{\arabic{enumi}.} 	
+\renewcommand{\labelenumi}{\arabic{enumi}.} 
+\renewcommand{\theenumii}{.\arabic{enumii}.} 
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.} 
+\renewcommand{\theenumiii}{.\arabic{enumiii}.} 
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}
+
+\righthyphenmin=2 % мінімальна к-ть символів для переносу
+\sloppy
+
+\begin{document}
+
+	\input{title_page} 		% Титулка
+	\input{contents_page} 	% Зміст
+	\input{gloss}			% Глосарій
+	
+	\input{intro} 			% Вступ
+
+	\input{chapter1}  		% Розділ 1
+	\input{chapter2} 		% Розділ 2
+	\input{results} 		% Висновки
+	\input{literature} 		% Використана лытература
+	\input{appendix} 		% Додатки
+	
+\end{document}
