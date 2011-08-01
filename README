@@ -29,9 +29,27 @@
 8. Можливість використання зображень.
 	та багато іншого.
 
+
+=== ЯКІ ФАЙЛИ МІСТЯТЬСЯ В ШАБЛОНІ? ===
+
+all.pdf             -- бінарний pdf-файл, результат компіляції
+all.tex             -- головний файл
+appendix.tex        -- файл додатків
+chapter1.tex        -- файл першої частини
+chapter2.tex        -- файл другої частини
+contents_page.tex   -- файл змісту
+gloss.tex           -- файл глосарію
+intro.tex           -- файл вступу
+literature.tex 	    -- файл бібліографії
+my_bibliography.bib -- BibTeX-файл що містить використані в роботі джерела
+README 		    -- цей допоміжний документ
+results.tex 	    -- файл результатів
+title_page.tex 	    -- файл титульної сторінки
+
+
 === ЩО ПОТРІБНО ДЛЯ ВИКОРИСТАННЯ? ===
 
-	Для нормальної роботи необхідно мани встановлену систему 
+	Для нормальної роботи необхідно мати встановлену систему 
 підготовки документів LaTeX (texlive-full для Linux, MiKTeX для Windows)
 та бажано, спеціальний текстовий редактор: 
  - TeXstudio (колишній texmaker) - http://texstudio.sourceforge.net/#downloads
@@ -39,18 +57,36 @@
  - Kile (для ОС з KDE) - http://kile.sourceforge.net/download.php
 На відповідних сторінках є посилання на бінарні файли для конкретних 
 операційних систем та вказівки по їх встановленню.
-	
+
+
 === ЯК ВСТАНОВИТИ ВИЩЕЗГАДАНІ ПРОГРАМИ? ===
 
 	LINUX (Debian-подібні системи)
-	Для встановлення системи LaTeX потрібно	 виконати наступну команду, 
-	що потребує адмін. прав:
-	sudo apt-get install texlive-full texlive-fonts-recommended 
-						 texlive-pictures texlive-latex-extra
+Для встановлення системи LaTeX потрібно	 виконати наступну команду, 
+що потребує адмін. прав:
+sudo apt-get install texlive-full texlive-fonts-recommended 
+		     texlive-pictures texlive-latex-extra
 						 
 	WINDOWS
-	Для встановлення системи LaTeX потрібно користувачам цієї ОС насолоджуюватися 
-	відсутністю системи контролю пакетів, і встановити власноруч, почергово наступні 
-	програмні засоби:
-	 - MiKTeX - http://www.miktex.org/2.9/setup
-	 - Ghostscript, Ghostview, GSview - http://pages.cs.wisc.edu/~ghost/
+Для встановлення системи LaTeX потрібно користувачам цієї ОС насолоджуюватися 
+відсутністю системи контролю пакетів, і встановити власноруч, почергово наступні 
+програмні засоби:
+ - MiKTeX - http://www.miktex.org/2.9/setup
+ - Ghostscript, Ghostview, GSview - http://pages.cs.wisc.edu/~ghost/
+
+
+=== ЯКІ ДОДАТКОВІ ДОВІДКОВІ МАТЕРІАЛИ ПОЧИТАТИ? ===
+
+ - Офіційний сайт LaTeX (англ.) - http://www.latex-project.org/
+ - Ресурс WikiBooks LaTeX (англ.) - http://en.wikibooks.org/wiki/LaTeX
+ - Блог "Записки дебианщика" (рос.) по тегам LaTeX - 
+      http://mydebianblog.blogspot.com/search/label/%D0%9B%D0%B0%D0%A2%D0%B5%D0%A5
+ - Getting Started with LaTeX by David R. Wilkins (англ.) - 
+      http://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/
+ - Курс по LaTeX на intuit.ru - http://www.intuit.ru/department/publish/latex/
+ - LaTeX в Росії - http://www.inp.nsk.su/~baldin/LaTeX/index.html
+ - С. М. Львовский. Набор и верстка в пакете LaTeX. (3-е издание, испр. и доп.) 
+    М.: МЦНМО, 2003, 448 с.
+    Распространение без ограничений (в неизменном виде) — можно распространять в 
+    электронном и печатном виде, но только без изменений и с сохранением копирайта;
+    ftp://ftp.mccme.ru/pub/tex/lvovsky-newbook/pdf.zip
